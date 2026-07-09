@@ -1,0 +1,35 @@
+name: sms_gateway
+description: "SMS Gateway - turns an Android phone into an API-triggered SMS send/receive endpoint."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+
+  # SMS send/receive
+  telephony: ^0.2.0
+
+  # Keeps the polling/sending loop alive in the background
+  flutter_foreground_task: ^6.5.0
+
+  # Networking to your VPS
+  http: ^1.2.1
+
+  # Local config storage (server URL, API key, poll interval)
+  shared_preferences: ^2.2.3
+
+  # Runtime permission requests (SMS, notifications)
+  permission_handler: ^11.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
