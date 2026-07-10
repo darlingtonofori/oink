@@ -10,11 +10,6 @@ subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
-    project.evaluationDependsOn(":app")
-
-    // Fix for old plugins (e.g. `telephony`) that don't declare a
-    // namespace, which AGP 8+ requires. Without this, the build fails
-    // with "Namespace not specified" for the telephony package.
     afterEvaluate { proj ->
         if (proj.hasProperty("android")) {
             def androidExt = proj.extensions.findByName("android")
